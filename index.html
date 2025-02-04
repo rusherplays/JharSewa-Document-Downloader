@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jharsewa Document Download by @Nikhil</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Jharkhand_Rajakiya_Chihna.svg/1200px-Jharkhand_Rajakiya_Chihna.svg.png">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 22px;
+            color: #333;
+        }
+        .credit {
+            font-size: 14px;
+            color: #555;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777;
+        }
+        .disclaimer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: red;
+            padding: 10px;
+            background: #fff;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="credit">Made by Nikhil with ❤</div>
+        <h1>झारखण्ड सरकार - प्रमाण पत्र डाउनलोड</h1>
+        <p>अपना टोकन नंबर दर्ज करें</p>
+        <input type="text" id="tokenInput" placeholder="टोकन नंबर दर्ज करें">
+        <button onclick="downloadDocument()">डाउनलोड करें</button>
+    </div>
+
+    <div class="footer">
+        <p>© 2025 Jharkhand Government | All Rights Reserved</p>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Disclaimer:</strong> यह कोई आधिकारिक सरकारी वेबसाइट नहीं है। यह एक तृतीय-पक्ष वेबसाइट है जो केवल प्रमाण पत्र डाउनलोड प्रक्रिया को सरल बनाने के लिए बनाई गई है। झारखंड सरकार या Jharsewa पोर्टल से इसका कोई सीधा संबंध नहीं है।</p>
+    </div>
+
+    <script>
+        function downloadDocument() {
+            var tokenNo = document.getElementById("tokenInput").value.trim();
+            if (tokenNo === "") {
+                alert("कृपया टोकन नंबर दर्ज करें!");
+                return;
+            }
+            
+            var url1 = "https://jharsewa.jharkhand.gov.in/t/xXiGf/" + tokenNo;
+            var url2 = "https://jharsewa.jharkhand.gov.in/t/gtp2e/" + tokenNo;
+            
+            // Try opening the first link
+            var win = window.open(url1, "_blank");
+            
+            // If blocked or fails, try the second link
+            setTimeout(function() {
+                if (!win || win.closed || typeof win.closed == "undefined") {
+                    window.open(url2, "_blank");
+                }
+            }, 2000);
+        }
+    </script>
+
+</body>
+</html>
